@@ -125,16 +125,16 @@
 
 								<section class="col-6 col-12-narrower">
 									<h3>Have any Doubt? Contact Us!!</h3>
-									<form>
+									<form  id="contactForm" method="POST" autocomplete="off" name="google-sheet">
 										<div class="row gtr-50">
 											<div class="col-6 col-12-mobilep">
-												<input type="text" name="name" id="name" placeholder="Name" />
+												<input autocomplete="off" type="text" name="name" id="name" placeholder="Name"required />
 										</div>
 										<div class="col-6 col-12-mobilep">
-											<input type="email" name="email" id="email" placeholder="Email" />
+											<input autocomplete="off" type="email" name="email" id="email" placeholder="Email" required/>
 										</div>
 										<div class="col-12">
-											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
+											<textarea autocomplete="off" name="message" id="message" placeholder="Message" rows="5" required></textarea>
 										</div>
 										<div class="col-12">
 											<ul class="actions">
@@ -176,5 +176,26 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets\js\LOGIC\main.js"></script>
+			<script>
+				
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbzQKfdo_8fEiCtatGAfncQAfBCynKAz118Uf2sR3jWQl__Lxc2t/exec'
+             const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+				setTimeout(function(){
+           		 console.log("Clearing Form");
+           		 clearContactForm();
+        	}, 2000);
+			
+			function clearContactForm() {
+				document.getElementById("contactForm").reset();
+			}
+            })
+          
+			</script>
 	</body>
 </html>
