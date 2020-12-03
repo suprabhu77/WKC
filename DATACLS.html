@@ -11,13 +11,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			.container {
+.container {
+  position: relative;
+  width: 100%;
+  /* height: 30%; */
+  overflow: hidden;
+  padding-top: 40%; /* 1:1 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+@media screen and (max-width: 480px) {
+		.container {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding-top: 160%; /* 1:1 Aspect Ratio */
+  padding-top: 120%; /* 1:1 Aspect Ratio */
 }
-
 .responsive-iframe {
   position: absolute;
   top: 0;
@@ -28,6 +46,7 @@
   height: 100%;
   border: none;
 }
+}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -36,28 +55,28 @@
 			<!-- Header -->
 				<div id="header">
 					<!-- Logo -->
-						<h1><a href="DATACLS.html" id="logo">WELCOME DATA STRUCTURE CLASS </a></h1>
-
+					
 					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
-								<!-- <li><a href="left-sidebar.html">Left Sidebar</a></li>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Home</a></li>
+							<!-- <li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="two-sidebar.html">Two Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li> -->
 							</ul>
 						</nav>
-
-				</div>
-			<!-- Banner -->
-						<center>
-							<h3>Welcome to DS CLASS</h3>
-							<h5>Press Launch in web</h5>
-						</center>
+						
+					</div>
+					<!-- Banner -->
+					<center>
+						<h1><a href="DATACLS.html" id="logo">WELCOME DATA STRUCTURE CLASS </a></h1>
+					
+						
 						<div class="container" >
 							<iframe class="responsive-iframe" src="https://meet.jit.si/DATASTRUCTURE_CLASS/PATASHALA2020" width="80" height="80" allow="camera; microphone"></iframe>
 						</div>
+					</center>
 				
 
 		</div>
